@@ -14,22 +14,22 @@ public class BidController {
     CampaignService campaignService;
 
     @GetMapping
-    @ResponseBody
-    public String getCampaignIds(@RequestParam(name = "seg") List<String> segmentIds) {
-
-        return formatResponse(campaignService.getCampaigns(segmentIds));
+    /* In case we want to send the response in plain text uncomment, and change List<String> by String */
+    // @ResponseBody
+    public List<String> getCampaignIds(@RequestParam(name = "seg") List<String> segmentIds) {
+        return campaignService.getCampaigns(segmentIds);
     }
 
-    private String formatResponse(List<String> campaigns) {
-        if(campaigns.size() == 0) return "";
-
-        StringBuilder str = new StringBuilder();
-
-        for(int i = 0 ; i < campaigns.size()-1 ; i ++) {
-            str.append(campaigns.get(i) + ",");
-        }
-
-        str.append(campaigns.get(campaigns.size()-1));
-        return str.toString();
-    }
+//    private String formatResponse(List<String> campaigns) {
+//        if(campaigns.size() == 0) return "";
+//
+//        StringBuilder str = new StringBuilder();
+//
+//        for(int i = 0 ; i < campaigns.size()-1 ; i ++) {
+//            str.append(campaigns.get(i) + ",");
+//        }
+//
+//        str.append(campaigns.get(campaigns.size()-1));
+//        return str.toString();
+//    }
 }

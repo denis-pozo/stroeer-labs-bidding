@@ -31,6 +31,7 @@ public class CampaignConfigController {
         return new ResponseEntity(SUCCESS_201);
     }
 
+    /* Service offered for testing purposes */
     @DeleteMapping
     public ResponseEntity deleteAllCampaigns () {
 

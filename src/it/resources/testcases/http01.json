@@ -1,10 +1,9 @@
 {"request": {"method": "DELETE", "url": "/config", "headers": {}, "body": {}}, "response": {"status_code": 204, "headers": {}, "body": {}}}
-{"request": {"method": "POST", "url": "/config?id=a&seg=a", "headers": {}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
-{"request": {"method": "POST", "url": "/config?id=b&seg=b", "headers": {}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
-{"request": {"method": "GET", "url": "/bid?seg=", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {}}}
-{"request": {"method": "GET", "url": "/bid?seg=a", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"a"}}}
-{"request": {"method": "GET", "url": "/bid?seg=b", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"b"}}}
-{"request": {"method": "GET", "url": "/bid?seg=a,b", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"a,b"}}}
-{"request": {"method": "POST", "url": "/config?id=c&seg=a,c", "headers": {}, "body": {}}, "response": {"status_code": 204, "headers": {"Content-Type": "application/json"}, "body": {}}}
-{"request": {"method": "GET", "url": "/bid?seg=a,c", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"a,c"}}}
-{"request": {"method": "GET", "url": "/bid?seg=a,b,c", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"a,b,c"}}}
+{"request": {"method": "POST", "url": "/config?id=a&seg=a", "headers": {"Content-Type": "application/json"}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
+{"request": {"method": "POST", "url": "/config?id=b&seg=b", "headers": {"Content-Type": "application/json"}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
+{"request": {"method": "GET", "url": "/bid?seg=", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": []}}
+{"request": {"method": "GET", "url": "/bid?seg=a", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": ["a"]}}
+{"request": {"method": "GET", "url": "/bid?seg=b", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": ["b"]}}
+{"request": {"method": "POST", "url": "/config?id=c&seg=a,c", "headers": {"Content-Type": "application/json"}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
+{"request": {"method": "GET", "url": "/bid?seg=a,c", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": ["a","c"]}}
+{"request": {"method": "GET", "url": "/bid?seg=a,b,c", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": ["a","b","c"]}}
