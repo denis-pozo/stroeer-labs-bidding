@@ -15,8 +15,7 @@ public class CampaignConfigController {
 
     private static final HttpStatus SUCCESS_201 = HttpStatus.CREATED;
     private static final HttpStatus NO_CONTENT_204 = HttpStatus.NO_CONTENT;
-    private static final HttpStatus SERVER_ERROR = HttpStatus.INTERNAL_SERVER_ERROR;
-
+    private static final HttpStatus SERVER_ERROR_500 = HttpStatus.INTERNAL_SERVER_ERROR;
 
     @Autowired
     CampaignService campaignService;
@@ -27,7 +26,7 @@ public class CampaignConfigController {
             @RequestParam(name = "seg", required = false) List<String> segments) {
 
         if(segments == null) segments = new ArrayList<>();
-        if(!campaignService.addCampaign(campaignId, segments)) return new ResponseEntity(SERVER_ERROR);
+        if(!campaignService.addCampaign(campaignId, segments)) return new ResponseEntity(SERVER_ERROR_500);
 
         return new ResponseEntity(SUCCESS_201);
     }
@@ -35,11 +34,10 @@ public class CampaignConfigController {
     @DeleteMapping
     public ResponseEntity deleteAllCampaigns () {
 
-        if(campaignService.deleteAllTransactions()) {
+        if(campaignService.deleteAllCampaigns()) {
             return new ResponseEntity(NO_CONTENT_204);
         }
 
-        return new ResponseEntity(SERVER_ERROR);
+        return new ResponseEntity(SERVER_ERROR_500);
     }
-
 }

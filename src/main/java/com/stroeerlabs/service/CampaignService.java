@@ -6,7 +6,7 @@ public interface CampaignService {
 
     boolean addCampaign(String campaignId, List<String> segments);
 
-    boolean deleteAllTransactions();
+    boolean deleteAllCampaigns();
 
     List<String> getCampaigns(List<String> segmentIds);
 
