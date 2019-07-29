@@ -8,6 +8,6 @@ public interface CampaignService {
 
     boolean deleteAllCampaigns();
 
-    List<String> getCampaigns(List<String> segmentIds);
+    List<String> findMatchingCampaigns(List<String> segmentIds);
 
 }

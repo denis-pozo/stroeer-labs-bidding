@@ -28,7 +28,7 @@ public class CampaignServiceImpl implements CampaignService {
     }
 
     @Override
-    public List<String> getCampaigns(List<String> segmentIds) {
+    public List<String> findMatchingCampaigns(List<String> segmentIds) {
         List<String> campaigns = new ArrayList<>();
 
         for(Campaign campaign : campaignsById.values()) {

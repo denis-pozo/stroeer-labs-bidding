@@ -21,7 +21,7 @@ public class CampaignConfigController {
     CampaignService campaignService;
 
     @PostMapping
-    public ResponseEntity postConfiguration(
+    public ResponseEntity addCampaign(
             @RequestParam(name = "id") String campaignId,
             @RequestParam(name = "seg", required = false) List<String> segments) {
 

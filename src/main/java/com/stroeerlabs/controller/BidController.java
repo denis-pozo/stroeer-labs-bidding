@@ -17,7 +17,7 @@ public class BidController {
     /* In case we want to send the response in plain text uncomment, and change List<String> by String */
     // @ResponseBody
     public List<String> getCampaignIds(@RequestParam(name = "seg") List<String> segmentIds) {
-        return campaignService.getCampaigns(segmentIds);
+        return campaignService.findMatchingCampaigns(segmentIds);
     }
 
 //    private String formatResponse(List<String> campaigns) {
