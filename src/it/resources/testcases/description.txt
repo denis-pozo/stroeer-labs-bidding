@@ -1,0 +1,3 @@
+http00.json: Empty segments
+http01.json: Simple cases
+http02.json: Overwriting
