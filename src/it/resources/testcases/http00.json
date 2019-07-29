@@ -1,3 +1,5 @@
 {"request": {"method": "DELETE", "url": "/config", "headers": {}, "body": {}}, "response": {"status_code": 204, "headers": {}, "body": {}}}
 {"request": {"method": "POST", "url": "/config?id=a&seg=", "headers": {"Content-Type": "application/json"}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
 {"request": {"method": "GET", "url": "/bid?seg=", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"segments": "a"}}}
+{"request": {"method": "GET", "url": "/bid?seg=a, b", "headers": {}, "body": {}}, "response": {"status_code": 200, "headers": {"Content-Type": "application/json"}, "body": {"segments": "a"}}}
+{"request": {"method": "POST", "url": "/config?id=a&seg=a, b", "headers": {"Content-Type": "application/json"}, "body": {}}, "response": {"status_code": 201, "headers": {}, "body": {}}}
