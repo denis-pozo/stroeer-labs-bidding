@@ -1,9 +1,6 @@
 package com.stroeerlabs.controller;
 
-import com.stroeerlabs.domain.Campaign;
 import com.stroeerlabs.service.CampaignService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,15 +27,9 @@ public class CampaignController {
             @RequestParam(name = "id") String campaignId,
             @RequestParam(name = "seg", required = false) List<String> segments) {
 
-        try {
-            Campaign campaign = new Campaign(campaignId, segments);
-            if(campaignService.add(campaign)) return new ResponseEntity(NO_CONTENT_204);
-        } catch (NullPointerException npe) {
-            return new ResponseEntity(NO_CONTENT_204);
-        } catch (IllegalArgumentException iae) {
-            return new ResponseEntity(NO_CONTENT_204);
-        }
 
+        if(campaignId == " ") return new ResponseEntity(NO_CONTENT_204);
+        if(campaignService.addCampaign(campaignId, segments)) return new ResponseEntity(NO_CONTENT_204);
         return new ResponseEntity(SUCCESS_201);
     }
 

@@ -1,10 +1,13 @@
 package com.stroeerlabs.service;
 
-import com.stroeerlabs.domain.Campaign;
+import java.util.List;
 
 public interface CampaignService {
-    
-    boolean add(Campaign campaign);
+
+    boolean addCampaign(String campaignId, List<String> segments);
 
     boolean deleteAllTransactions();
+
+    List<String> getCampaigns(List<String> segmentIds);
+
 }
